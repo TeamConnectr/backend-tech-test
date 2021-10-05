@@ -4,14 +4,16 @@ using Connectr.TechTests.Backend.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Connectr.TechTests.Backend.EntityFramework.Migrations
 {
     [DbContext(typeof(StarwarsDbContext))]
-    partial class StarwarsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211005145218_UpdateNullabilityOfProperties")]
+    partial class UpdateNullabilityOfProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -158,7 +160,7 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal?>("Gravity")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -173,7 +175,7 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal?>("SurfaceWater")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -188,10 +190,10 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal?>("AverageHeight")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal?>("AverageLifespan")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Classification")
                         .HasColumnType("int");
@@ -222,20 +224,20 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("CargoCapacity")
-                        .HasColumnType("bigint");
+                    b.Property<int?>("CargoCapacity")
+                        .HasColumnType("int");
 
                     b.Property<string>("Consumables")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("CostInCredits")
-                        .HasColumnType("bigint");
+                    b.Property<int?>("CostInCredits")
+                        .HasColumnType("int");
 
                     b.Property<int?>("Crew")
                         .HasColumnType("int");
 
                     b.Property<decimal?>("HyperdriveRating")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("Length")
                         .HasColumnType("int");
@@ -294,7 +296,7 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Passengers")
+                    b.Property<int>("Passengers")
                         .HasColumnType("int");
 
                     b.Property<string>("VehicleClass")

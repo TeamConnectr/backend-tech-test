@@ -4,14 +4,16 @@ using Connectr.TechTests.Backend.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Connectr.TechTests.Backend.EntityFramework.Migrations
 {
     [DbContext(typeof(StarwarsDbContext))]
-    partial class StarwarsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211005162922_UpdateNullabilityAndDataTypesOfVehicleAndStarshipProperties")]
+    partial class UpdateNullabilityAndDataTypesOfVehicleAndStarshipProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -158,7 +160,7 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal?>("Gravity")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -173,7 +175,7 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal?>("SurfaceWater")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -188,10 +190,10 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal?>("AverageHeight")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal?>("AverageLifespan")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Classification")
                         .HasColumnType("int");
@@ -235,7 +237,7 @@ namespace Connectr.TechTests.Backend.EntityFramework.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal?>("HyperdriveRating")
-                        .HasColumnType("decimal(18,4)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("Length")
                         .HasColumnType("int");

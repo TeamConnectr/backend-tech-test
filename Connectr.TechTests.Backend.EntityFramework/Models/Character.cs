@@ -8,9 +8,9 @@ namespace Connectr.TechTests.Backend.EntityFramework.Models
 
         public string Name {  get; set; }
 
-        public int Height { get; set; }
+        public int? Height { get; set; }
 
-        public int Mass {  get; set; }
+        public int? Mass {  get; set; }
 
         public HairColor HairColor { get; set; }
 
@@ -19,8 +19,6 @@ namespace Connectr.TechTests.Backend.EntityFramework.Models
         public string BirthYear { get; set;  }
 
         public Gender Gender {  get; set; }
-
-        public int HomeworldId {  get; set; }
 
         public Planet Homeworld { get; set; }
 

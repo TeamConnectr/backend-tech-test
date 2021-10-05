@@ -9,6 +9,7 @@
         Insectoid,
         Mammal,
         Reptile,
+        Reptilian,
         Sentient
     }
 }

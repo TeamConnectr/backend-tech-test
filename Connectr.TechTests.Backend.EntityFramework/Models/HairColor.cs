@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Connectr.TechTests.Backend.EntityFramework.Models
+﻿namespace Connectr.TechTests.Backend.EntityFramework.Models
 {
     public enum HairColor
     {

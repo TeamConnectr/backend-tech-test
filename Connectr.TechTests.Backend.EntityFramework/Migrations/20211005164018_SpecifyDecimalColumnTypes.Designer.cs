@@ -4,14 +4,16 @@ using Connectr.TechTests.Backend.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Connectr.TechTests.Backend.EntityFramework.Migrations
 {
     [DbContext(typeof(StarwarsDbContext))]
-    partial class StarwarsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211005164018_SpecifyDecimalColumnTypes")]
+    partial class SpecifyDecimalColumnTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

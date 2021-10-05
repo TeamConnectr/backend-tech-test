@@ -2,6 +2,7 @@
 {
     public enum Designation
     {
+        Unknown,
         Reptilian,
         Sentient
     }

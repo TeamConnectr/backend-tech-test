@@ -18,7 +18,7 @@ namespace Connectr.TechTests.Backend.EntityFramework.Models
 
         public string Language {  get; set; }
 
-        public int HomeworldId { get; set; }
+        public Planet Homeworld { get; set; }
 
         public ICollection<Character> People { get; set; }
 

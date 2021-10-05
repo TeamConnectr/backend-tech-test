@@ -8,17 +8,17 @@ namespace Connectr.TechTests.Backend.EntityFramework.Models
 
         public string Name {  get; set; }
 
-        public int Diameter { get; set; }
+        public int? Diameter { get; set; }
 
         public decimal? Gravity { get; set; }
 
-        public int OrbitalPeriod { get; set; }
+        public int? OrbitalPeriod { get; set; }
 
-        public long Population { get; set; }
+        public long? Population { get; set; }
 
         public int? RotationPeriod { get; set; }
 
-        public decimal SurfaceWater { get; set; }
+        public decimal? SurfaceWater { get; set; }
 
         public ICollection<Film> Films {  get; set; }
 
