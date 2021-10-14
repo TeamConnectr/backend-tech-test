@@ -2,7 +2,7 @@
 
 Hello, and thank you for taking our tech test and your interest in working with us!
 
-The Connectr platform supports users to find great employers, and to improve there skills and advance there careers. We do this through connecting users with the best possible mentors, content, quiz-style self assesment and personalisation. We have big plans for Connectr and an ambitious product roadmap for the future.
+The Connectr platform supports users to find great employers, and to improve their skills and advance their careers. We do this through connecting users with the best possible mentors, content, quiz-style self assesment and personalisation. We have big plans for Connectr and an ambitious product roadmap for the future.
 
 This test is designed to assess the skills we use everyday.
 
@@ -18,7 +18,7 @@ The application is based on an empty ASP.NET 5 project template, with the databa
 
 You can modify, alter or add to this project in anyway you see fit.
 
-You can either fork this repository and make your changes there and invite us to view when your finished, or clone this repository to your machine and send us a ZIP file with your final changes.
+Please clone this repository to your machine and send us a ZIP file with your final changes.
 
 We have tested this project with Visual Studio 2019 and 2022.
 
