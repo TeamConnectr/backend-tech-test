@@ -28,7 +28,7 @@ We have tested this project with Visual Studio 2019 and 2022.
 
 It is ok to use a framework, scaffolding and Nuget packages.
 
-Start with the most important requirements first. If you’re short on time, there will be an opportunity at the next stage of the process to talk us through how any missing requirements would be met.
+Start with the most important requirements first. If you're short on time, there will be an opportunity at the next stage of the process to talk us through how any missing requirements would be met.
 
 ## Requirements
 
