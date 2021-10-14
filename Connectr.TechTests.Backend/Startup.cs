@@ -22,6 +22,13 @@ namespace Connectr.TechTests.Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<StarwarsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services
+                .AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.WriteIndented = true;
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,6 +46,8 @@ namespace Connectr.TechTests.Backend
                 {
                     await context.Response.WriteAsync(File.ReadAllText("../README.md"));
                 });
+
+                endpoints.MapControllers();
             });
         }
     }
