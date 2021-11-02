@@ -24,7 +24,7 @@ We have tested this project with Visual Studio 2019 and 2022.
 
 ## Duration
 
-**Please only spend an hour on this test and aim to showcase your C# skills. **
+**Please only spend an hour on this test and aim to showcase your C# skills.**
 
 It is ok to use a framework, scaffolding and Nuget packages.
 
