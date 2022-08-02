@@ -18,7 +18,7 @@ The application is based on an empty ASP.NET 5 project template, with the databa
 
 You can modify, alter or add to this project in anyway you see fit.
 
-Please clone this repository to your machine and send us a ZIP file with your final changes.
+Please clone this repository to your machine and file share a ZIP with your final changes (emails with attachments often get blocked).
 
 We have tested this project with Visual Studio 2019 and 2022.
 
