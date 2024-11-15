@@ -1,48 +1,48 @@
-using Connectr.TechTests.Backend.EntityFramework;
-using Microsoft.AspNetCore.Hosting;
+﻿using Connectr.TechTests.Backend.EntityFramework;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
 
-namespace Connectr.TechTests.Backend
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<StarwarsDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
+
+var app = builder.Build();
+
+CreateDbIfNotExists(app.Services);
+
+if (app.Environment.IsDevelopment())
 {
-    public class Program
+    app.UseDeveloperExceptionPage();
+}
+
+app.UseRouting();
+
+app.MapGet("/", async context => await context.Response.WriteAsync(File.ReadAllText("../README.md")));
+
+app.MapControllers();
+
+static void CreateDbIfNotExists(IServiceProvider provider)
+{
+    using var scope = provider.CreateScope();
+    try
     {
-        public static void Main(string[] args)
-        {
-            var host = CreateHostBuilder(args).Build();
-            
-            CreateDbIfNotExists(host);
-
-            host.Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args)
-        {
-            return Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-        }
-
-        private static void CreateDbIfNotExists(IHost host)
-        {
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                try
-                {
-                    var context = services.GetRequiredService<StarwarsDbContext>();
-                    StarwarsDbInitializer.Initialize(context);
-                }
-                catch (Exception ex)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred creating the DB.");
-                }
-            }
-        }
+        var context = scope.ServiceProvider.GetRequiredService<StarwarsDbContext>();
+        StarwarsDbInitializer.Initialize(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred creating the DB.");
     }
 }
