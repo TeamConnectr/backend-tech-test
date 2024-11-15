@@ -32,6 +32,8 @@ app.MapGet("/", async context => await context.Response.WriteAsync(File.ReadAllT
 
 app.MapControllers();
 
+app.Run();
+
 static void CreateDbIfNotExists(IServiceProvider provider)
 {
     using var scope = provider.CreateScope();
