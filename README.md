@@ -12,9 +12,9 @@ Build an API that allows clients to query Star Wars data and add additional data
 
 ## Setup
 
-This repository includes a sample project which will create a database and populate it with the example data on first run.
+This repository includes a sample project which will create a database and populate it with the example data on first run. After creation, the database can be accessed at `(localdb)\mssqllocaldb` in your SQL Server IDE.
 
-The application is based on an empty ASP.NET 5 project template, with the database setup using Entity Framework Core (`StarwarsDbContext`). By default the database will be created in your [localdb instance](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver15).
+The application is based on an empty ASP.NET 8 project template, with the database setup using Entity Framework Core (`StarwarsDbContext`). By default the database will be created in your [localdb instance](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver15).
 
 You can modify, alter or add to this project in anyway you see fit.
 
